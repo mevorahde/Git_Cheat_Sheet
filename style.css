@@ -49,7 +49,7 @@ code {
   padding: 10px 3px;
   display: block;
   color: #037367;
-  width: 50%
+  max-width: fit-content;
 }
 
 #git-topic{
