@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Git Cheat Sheet</title>  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css'>
+  <link rel="stylesheet" href="style.css">  
+</head>
+
+<body>
+<div class="main-body">
+  <nav id="navbar">
+    <header id="header">GIT Cheatsheet</header>
+    <a href="#INTRODUCTION" class="nav-link">Introduction</a>
+    <a href="#GIT" class="nav-link">Git</a>
+    <a href="#CREATE" class="nav-link">Create</a>
+    <a href="#LOCAL_CHANGES" class="nav-link">Local Changes</a>
+    <a href="#UPDATE_AND_PUBLISH" class="nav-link">Update and Publish</a>
+    <a href="#MERGE_AND_REBASE" class="nav-link">Merge and Rebase</a>
+    <a href="#BRANCHES_AND_TAGS" class="nav-link">Branches and Tags</a>
+    <a href="#COMMIT_HISTORY" class="nav-link">Commit History</a>
+    <a href="#UNDO" class="nav-link">Undo</a>
+    <a href="#BEST_PRATICES" class="nav-link">Best Pratices</a>
+  </nav>
+
+  <main id="main-doc">
+
+    <section class="main-section" id="INTRODUCTION">
+      <header id="sec-header">Introduction</header>
+      <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
+      <p>This is an open source cheat sheet for GIT and the most common and used (personal opinion) GIT features. My references are from experiences or from the <a href="https://www.git-tower.com/blog/git-cheat-sheet">Tower Git Cheat Sheet</a>. If you feel something
+        should be added, feel free to make a pull request or <a href="mailto:mevorahde@hotmail.com?Subject=Git%20Cheet%20Sheet" target="_top">e-mail me</a>.</p>
+    </section>
+
+    <section class="main-section" id="GIT">
+      <header id="sec-header">Git</header>
+      <p>I use GIT as a version control and as a 'Flash drive' so to speak. I like to 'pull' my code from GitHub, the cloud on to my laptop when I'm traveling. Once I'm doing with some edits, I 'push' my code back to the GitHub and 'pull' my edited code
+        to my desktop when I get back home. </p>
+      <p>GIT/GitHub is also popular to share projects with others, people can 'fork' a copy of your code. They can make their own version of your code or can make edits and make a 'pull request' to your master version of your code.</p>
+
+      <h3>Core Topics Covered</h3>
+      <ul>
+        <li>Create</li>
+        <li>Local Changes</li>
+        <li>Update and Publish</li>
+        <li>Merge and Rebase</li>
+        <li>Branches and Tags</li>
+        <li>Commit History</li>
+        <li>Undo</li>
+        <li>Best Pratices</li>
+      </ul>
+    </section>
+
+    <section class="main-section" id="CREATE">
+      <header id="sec-header">Create</header>
+      <h5>Micro Topics Covered in the Create Section</h5>
+      <ul>
+        <li>Clone an existing repository</li>
+        <li>Create a new local repository</li>
+      </ul>
+      <div id="git-topic">
+        <h6>Clone an existing repository</h6>
+        <p>By getting the url from a created repository in GitHub, Enter in the following:</p>
+        <code>git clone 	&lt;repository_url&gt;</code>
+      </div>
+      <div>
+        <h6>Create a new local repository</h6>
+        <p>To create source control for a local copy and a GitHub repository, you need to initalize the Git settings for the directory. </p>
+        <p>Change directories to the folder you want source control for. Enter in the following:</p>
+        <code>git init</code>
+        <div>
+    </section>
+
+    <section class="main-section" id="LOCAL_CHANGES">
+      <header id="sec-header">Local Changes</header>
+      <h5>Micro Topics Covered in the Local Changes Section</h5>
+      <ul>
+        <li>Changed files in your working directory</li>
+        <li>Changes to tracked files</li>
+        <li>Add all current changes to the next commit</li>
+        <li>Add all files in the directory to the next commit</li>
+        <li>Add some changes in &lt;file&gt; to the next commit</li>
+        <li>Commit all local changes in tracked files</li>
+        <li>Commit perviously staged changes</li>
+        <li>Change the last commit</li>
+      </ul>
+      <div id="git-topic">
+        <h6>Changed files in your working directory</h6>
+        <code>git status</code>
+      </div>
+      <div id="git-topic">
+        <h6>Changes to tracked files</h6>
+        <code>git diff</code>
+      </div>
+      <div id="git-topic">
+        <h6>Add all current changes to the next commit</h6>
+        <code>git add -A</code>
+      </div>
+      <div id="git-topic">
+        <h6>Add all files in the directory to the next commit</h6>
+        <code>git add .</code>
+      </div>
+      <div id="git-topic">
+        <h6>Add some changes in &lt;file&gt; to the next commit</h6>
+        <code>git add -p &lt;file&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Commit all local changes in tracked files</h6>
+        <code>git commit -a</code>
+      </div>
+      <div id="git-topic">
+        <h6>Commit perviously staged changes</h6>
+        <code>git commit</code>
+      </div>
+      <div id="git-topic">
+        <h6>Change the last commit</h6>
+        <code>git commit --amend</code>
+      </div>
+    </section>
+
+    <section class="main-section" id="UPDATE_AND_PUBLISH">
+      <header id="sec-header">Update and Publish</header>
+      <h5>Micro Topics Covered in the Update and Publish Section</h5>
+      <ul>
+        <li>List all currently configured remotes</li>
+        <li>Show information about a remote</li>
+        <li>Show all remotes</li>
+        <li>Add new remote repository, named &lt;remote_name&gt;</li>
+        <li>Download all changes from &lt;remote_name&gt; but don't integrate into HEAD</li>
+        <li>Download changes and directly merge/integrate into HEAD</li>
+        <li>Publish local changes on a remote</li>
+        <li>Delete a branch on the remote</li>
+        <li>Publish your tages</li>
+      </ul>
+      <div id="git-topic">
+        <h6>List all currently configured remotes</h6>
+        <code>git remote</code>
+      </div>
+      <div id="git-topic">
+        <h6>Show information about a remote</h6>
+        <code>git remote show</code>
+      </div>
+      <div id="git-topic">
+        <h6>Show all remotes</h6>
+        <code>git remote -v</code>
+      </div>
+      <div id="git-topic">
+        <h6>Add new remote repository, named &lt;remote_name&gt;</h6>
+        <code>git remote add &lt;remote_name&gt; &lt;repository_url&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Download all changes from &lt;remote_name&gt; but don't integrate into HEAD</h6>
+        <code>git fetch &lt;remote_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Download changes and directly merge/integrate into HEAD</h6>
+        <code>git pull &lt;remote_name&gt; &lt;branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Publish local changes on a remote</h6>
+        <code>git push &lt;remote_name&gt; &lt;branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Delete a branch on the remote</h6>
+        <code>git branch -dr &lt;remote_name&gt;/&lt;branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Publish your tages</h6>
+        <code>git push --tags</code>
+      </div>
+    </section>
+
+    <section class="main-section" id="MERGE_AND_REBASE">
+      <header id="sec-header">Merge and Rebase</header>
+      <h5>Micro Topics Covered in the Merge and Rebase Section</h5>
+      <ul>
+        <li>Merge &lt;branch_name&gt; into your current HEAD</li>
+        <li>Rebase your current HEAD onto &lt;branch_name&gt;</li>
+        <li>Abort a rebase</li>
+        <li>Continue a rebase after resolving conflicts</li>
+        <li>Use your configured merge tool to solve conflicts</li>
+        <li>Use your editor to manually solve conflicts and (after resolving) mark file as resolved</li>
+      </ul>
+      <div id="git-topic">
+        <h6>Merge &lt;branch_name&gt; into your current HEAD</h6>
+        <code>git merge &lt;branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Rebase your current HEAD onto &lt;branch_name&gt;</h6>
+        <code>git rebase &lt;branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Abort a rebase</h6>
+        <code>git rebase --abort</code>
+      </div>
+      <div id="git-topic">
+        <h6>Continue a rebase after resolving conflicts</h6>
+        <code>git rebase --continue</code>
+      </div>
+      <div id="git-topic">
+        <h6>Use your configured merge tool to solve conflicts</h6>
+        <code>git mergetool</code>
+      </div>
+      <div id="git-topic">
+        <h6>Use your editor to manually solve conflicts and (after resolving) mark file as resolved</h6>
+        <code>git add &lt;resolved_file&gt;</code>
+        <br>
+        <code>git rm &lt;resolved_file&gt;</code>
+      </div>
+    </section>
+    <section class="main-section" id="BRANCHES_AND_TAGS">
+      <header id="sec-header">Branches and Tags</header>
+      <h5>Micro Topics Covered in the Branches and Tags Section</h5>
+      <ul>
+        <li>List all existing branches</li>
+        <li>Switch HEAD branch</li>
+        <li>Create a new branch based on your current HEAD</li>
+        <li>Create a new tracking branch based on a remote branch</li>
+        <li>Delete a local branch</li>
+        <li>Mark the current commit with a tag</li>
+      </ul>
+      <div id="git-topic">
+        <h6>List all existing branches</h6>
+        <code>git branch -av</code>
+      </div>
+      <div id="git-topic">
+        <h6>Switch HEAD branch</h6>
+        <code>git checkout &lt;branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Create a new branch based on your current HEAD</h6>
+        <code>git branch &lt;new_branch&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Create a new tracking branch based on a remote branch</h6>
+        <code>git checkout --track &lt;remote_name/branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Delete a local branch</h6>
+        <code>git branch -d &lt;branch_name&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Mark the current commit with a tag</h6>
+        <code>git tag &lt;tag_name&gt;</code>
+    </section>
+    <section class="main-section" id="COMMIT_HISTORY">
+      <header id="sec-header">Commit History</header>
+      <h5>Micro Topics Covered in the Commit History Section</h5>
+      <ul>
+        <li>Show all commits, starting with newest</li>
+        <li>Show changes over time for a specific file</li>
+        <li>Who changed what and when in &lt;file&gt;</li>
+      </ul>
+      <div id="git-topic">
+        <h6>Show all commits, starting with newest</h6>
+        <code>git log</code>
+      </div>
+      <div id="git-topic">
+        <h6>Show changes over time for a specific file</h6>
+        <code>git log -p &lt;file&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Who changed what and when in &lt;file&gt;</h6>
+        <code>git blame &lt;file&gt;</code>
+      </div>
+    </section>
+    <section class="main-section" id="UNDO">
+      <header id="sec-header">Undo</header>
+      <h5>Micro Topics Covered in the Undo Section</h5>
+      <ul>
+        <li>Discard all local changes in your working directory</li>
+        <li>Discard local changes in a specific file</li>
+        <li>Reverta commit (by producing a new commit with contrary changes)</li>
+        <li>Reset your HEAD pointer to a previous commit and discard all changes since then</li>
+        <li>Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes</li>
+        <li>Reset your HEAD pointer to a previous commit and preserve uncommitted local changes</li>
+      </ul>
+      <div id="git-topic">
+        <h6>Discard all local changes in your working directory</h6>
+        <code>git reset --hard HEAD</code>
+      </div>
+      <div id="git-topic">
+        <h6>Discard local changes in a specific file</h6>
+        <code>git checkout HEAD &lt;file&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Reverta commit (by producing a new commit with contrary changes)</h6>
+        <code>git revert &lt;commit&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Reset your HEAD pointer to a previous commit and discard all changes since then</h6>
+        <code>git reset --hard &lt;committ&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes</h6>
+        <code>git reset &lt;committ&gt;</code>
+      </div>
+      <div id="git-topic">
+        <h6>Reset your HEAD pointer to a previous commit and preserve uncommitted local changes</h6>
+        <code>git reset --keep &lt;committ&gt;</code>
+      </div>
+    </section>
+    <section class="main-section" id="BEST_PRATICES">
+      <header id="sec-header">Best Pratices</header>
+      <h5>Micro Topics Covered in the Best Pratices Section</h5>
+      <ul>
+        <li>Commit Related Changes</li>
+        <li>Test Code before you commit</li>
+        <li>Use Branches</li>
+        <li>Commit often</li>
+        <li>Version control is not a backup system</li>
+        <li>Agree on a workflow</li>
+        <li>Do not commit half-done work</li>
+        <li>Write good commit messages</li>
+        <li>Help Documentation</li>
+        <li>Free Online Resources</li>
+      </ul>
+    
+
+    <h6>Commit Related Changes</h6>
+    <p>A commit should be a wrapper for related changes. For example, fixing two different bugs should produce two separate commits. Small commits make it easier for other developers to understand the changes and roll them back if something went wrong.</p>
+    <p>With tools like the staging area and the ability to stage only parts of a file, Git makes it easy to create very granular commits.</p>
+    <h6>Test Code before you commit</h6>
+    <p>Resist the temptation to commit something that you 'think' is completed. Test it thoroughly to make sure it really is completed and has no side effects (as far as one can tell). While committing half-baked things in your local repository only requires
+      you to forgive yourself, having your code tested is even more important when it comes to pushing/sharing your code with others.</p>
+    <h6>Use Branches</h6>
+    <p>Branching is one of Git’s more powerful features – and this is not by accident: quick and easy branching was a central requirement from day one. Branches are the perfect tool to help you avoid mixing up different lines of development. You should use
+      branches extensively in your development workflows: for new features, bug fixes, ideas etc.</p>
+    <h6>Commit often</h6>
+    <p>Coming often keeps your commits small and again helps you commit only related changes. Moreover, it allows you to share your code more frequently with others. That way it’s easier for everyone to integrate changes regularly and avoid having merge
+      conflicts. Having few large commits and sharing them rarely, in contrast, makes it hard to solve conflicts.</p>
+    <h6>Version control is not a backup system</h6>
+    <p>Having your files backup on a remote server is a nice side effect of having a version control system. But you should not use your VCS like it was a backup system. When doing version control, you should pay attention to committing semantically (see
+      &#8810;related changes&#8811;) – you shouldn’t just cram in files.</p>
+    <h6>Agree on a workflow</h6>
+    <p>Git lets you pick from a lot of different flows: long-running branches, topic branches, merge or rebase, git flow… Which one you choose depends on a couple of factors: your project, your overall development and deployment workflow and (maybe most
+      importantly) on your and your teammates’ personal preferences. However you choose to work, just make sure to agree on a common workflow that everyone follows.</p>
+    <h6>Do not commit half-done work</h6>
+    <p>You should only commit code when it’s completed. This doesn’t mean you have to complete a while large feature before committing. Quite the contrary: split the feature’s implementation into logical chunks and remember to commit early and often. But
+      don’t commit just to have something in the repository before leaving the office at the end of the day. If you’re tempted to commit just because you need a clean working copy (to check out a branch, pull changes, etc.) consider using Git’s &lt;Stash&gt;
+      feature instead.</p>
+    <h6>Write good commit messages</h6>
+    <p>Begin your message with a short summary of your changes (up to 50 characters as a guideline). Separate it from the following body by including a blank line. The body of your message should provide detailed answers to the following questions</p>
+    <ul>
+      <li>What was the motivation for the change? </li>
+      <li>How does it differ from the previous implementation? </li>
+    </ul>
+    <p>Use the imperative, present tense (<i>change</i> not <i>changed</i> or <i>changes</i>) to be considered with generated messages from commands like git merge.</p>
+    <div id="git-topic">
+      <h6>Help Documentation</h6>
+      <p>Get help on the command line</p>
+      <code>git help 	&lt;command&gt;</code>
+    </div>
+    <h6>Free Online Resources</h6>
+    <a href="https://www.pythonpirates.org/resources/#git-and-github-references">Python Pirates Git/GitHub Resources</a>
+</section>
+    <footer class="text-center">
+      <hr>
+      <p>
+        Written and Coded by <a class="footerLink" href="https://www.freecodecamp.org/mevorahde" target="blank">David Mevorah</a>
+        <span>Copyright 2019</span>
+      </p>
+    </footer>
+
+  </main>
+  </div>
+  
+  
+
+</body>
+
+</html>
