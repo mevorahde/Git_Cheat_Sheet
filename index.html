@@ -26,14 +26,14 @@
     </nav>
     <main id="main-doc">
       <section class="main-section" id="INTRODUCTION">
-        <header id="sec-header">Introduction</header>
+        <header class="sec-header">Introduction</header>
         <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
         <p>This is an open source cheat sheet for GIT and the most common and used (personal opinion) GIT features. My references are from experiences or from the <a href="https://www.git-tower.com/blog/git-cheat-sheet">Tower Git Cheat Sheet</a>. If you
           feel something should be added, feel free to make a <a href="https://github.com/mevorahde/Git_Cheat_Sheet">pull request</a> or <a href="mailto:mevorahde@hotmail.com?Subject=Git%20Cheet%20Sheet" target="_top">e-mail me</a>.
         </p>
       </section>
       <section class="main-section" id="GIT">
-        <header id="sec-header">Git</header>
+        <header class="sec-header">Git</header>
         <p>I use GIT as a version control and as a 'Flash drive' so to speak. I like to 'pull' my code from GitHub, the cloud on to my laptop when I'm traveling. Once I'm doing with some edits, I 'push' my code back to the GitHub and 'pull' my edited code
           to my desktop when I get back home.
         </p>
@@ -51,8 +51,8 @@
         </ul>
       </section>
       <section class="main-section" id="CREATE">
-        <header id="sec-header">Create</header>
-        <div id="git-topic">
+        <header class="sec-header">Create</header>
+        <div class="git-topic">
           <h6>Clone an existing repository</h6>
           <p>By getting the url from a created repository in GitHub, Enter in the following:</p>
           <code>git clone   &lt;repository_url&gt;</code>
@@ -65,102 +65,102 @@
           <div>
       </section>
       <section class="main-section" id="LOCAL_CHANGES">
-        <header id="sec-header">Local Changes</header>
-        <div id="git-topic">
+        <header class="sec-header">Local Changes</header>
+        <div class="git-topic">
           <h6>Changed files in your working directory</h6>
           <code>git status</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Changes to tracked files</h6>
           <code>git diff</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Add all current changes to the next commit</h6>
           <code>git add -A</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Add all files in the directory to the next commit</h6>
           <code>git add .</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Add some changes in &lt;file&gt; to the next commit</h6>
           <code>git add -p &lt;file&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Commit all local changes in tracked files</h6>
           <code>git commit -a</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Commit perviously staged changes</h6>
           <code>git commit</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Change the last commit</h6>
           <code>git commit --amend</code>
         </div>
       </section>
       <section class="main-section" id="UPDATE_AND_PUBLISH">
-        <header id="sec-header">Update and Publish</header>
-        <div id="git-topic">
+        <header class="sec-header">Update and Publish</header>
+        <div class="git-topic">
           <h6>List all currently configured remotes</h6>
           <code>git remote</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Show information about a remote</h6>
           <code>git remote show</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Show all remotes</h6>
           <code>git remote -v</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Add new remote repository, named &lt;remote_name&gt;</h6>
           <code>git remote add &lt;remote_name&gt; &lt;repository_url&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Download all changes from &lt;remote_name&gt; but don't integrate into HEAD</h6>
           <code>git fetch &lt;remote_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Download changes and directly merge/integrate into HEAD</h6>
           <code>git pull &lt;remote_name&gt; &lt;branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Publish local changes on a remote</h6>
           <code>git push &lt;remote_name&gt; &lt;branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Delete a branch on the remote</h6>
           <code>git branch -dr &lt;remote_name&gt;/&lt;branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Publish your tages</h6>
           <code>git push --tags</code>
         </div>
       </section>
       <section class="main-section" id="MERGE_AND_REBASE">
-        <header id="sec-header">Merge and Rebase</header>
-        <div id="git-topic">
+        <header class="sec-header">Merge and Rebase</header>
+        <div class="git-topic">
           <h6>Merge &lt;branch_name&gt; into your current HEAD</h6>
           <code>git merge &lt;branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Rebase your current HEAD onto &lt;branch_name&gt;</h6>
           <code>git rebase &lt;branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Abort a rebase</h6>
           <code>git rebase --abort</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Continue a rebase after resolving conflicts</h6>
           <code>git rebase --continue</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Use your configured merge tool to solve conflicts</h6>
           <code>git mergetool</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Use your editor to manually solve conflicts and (after resolving) mark file as resolved</h6>
           <code>git add &lt;resolved_file&gt;</code>
           <br>
@@ -168,75 +168,75 @@
         </div>
       </section>
       <section class="main-section" id="BRANCHES_AND_TAGS">
-        <header id="sec-header">Branches and Tags</header>
-        <div id="git-topic">
+        <header class="sec-header">Branches and Tags</header>
+        <div class="git-topic">
           <h6>List all existing branches</h6>
           <code>git branch -av</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Switch HEAD branch</h6>
           <code>git checkout &lt;branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Create a new branch based on your current HEAD</h6>
           <code>git branch &lt;new_branch&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Create a new tracking branch based on a remote branch</h6>
           <code>git checkout --track &lt;remote_name/branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Delete a local branch</h6>
           <code>git branch -d &lt;branch_name&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Mark the current commit with a tag</h6>
           <code>git tag &lt;tag_name&gt;</code>
       </section>
       <section class="main-section" id="COMMIT_HISTORY">
-        <header id="sec-header">Commit History</header>
-        <div id="git-topic">
+        <header class="sec-header">Commit History</header>
+        <div class="git-topic">
           <h6>Show all commits, starting with newest</h6>
           <code>git log</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Show changes over time for a specific file</h6>
           <code>git log -p &lt;file&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Who changed what and when in &lt;file&gt;</h6>
           <code>git blame &lt;file&gt;</code>
         </div>
       </section>
       <section class="main-section" id="UNDO">
-        <header id="sec-header">Undo</header>
-        <div id="git-topic">
+        <header class="sec-header">Undo</header>
+        <div class="git-topic">
           <h6>Discard all local changes in your working directory</h6>
           <code>git reset --hard HEAD</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Discard local changes in a specific file</h6>
           <code>git checkout HEAD &lt;file&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Reverta commit (by producing a new commit with contrary changes)</h6>
           <code>git revert &lt;commit&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Reset your HEAD pointer to a previous commit and discard all changes since then</h6>
           <code>git reset --hard &lt;commit&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Reset your HEAD pointer to a previous commit and preserve all changes as unstaged changes</h6>
           <code>git reset &lt;commit&gt;</code>
         </div>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Reset your HEAD pointer to a previous commit and preserve uncommitted local changes</h6>
           <code>git reset --keep &lt;commit&gt;</code>
         </div>
       </section>
       <section class="main-section" id="BEST_PRATICES">
-        <header id="sec-header">Best Pratices</header>
+        <header class="sec-header">Best Pratices</header>
         <h6>Commit Related Changes</h6>
         <p>A commit should be a wrapper for related changes. For example, fixing two different bugs should produce two separate commits. Small commits make it easier for other developers to understand the changes and roll them back if something went wrong.</p>
         <p>With tools like the staging area and the ability to stage only parts of a file, Git makes it easy to create very granular commits.</p>
@@ -266,7 +266,7 @@
           <li>How does it differ from the previous implementation? </li>
         </ul>
         <p>Use the imperative, present tense (<i>change</i> not <i>changed</i> or <i>changes</i>) to be considered with generated messages from commands like git merge.</p>
-        <div id="git-topic">
+        <div class="git-topic">
           <h6>Help Documentation</h6>
           <p>Get help on the command line</p>
           <code>git help  &lt;command&gt;</code>

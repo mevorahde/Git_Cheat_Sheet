@@ -37,7 +37,7 @@ header {
   font-weight: bold;
 }
 
-#sec-header{
+.sec-header{
   padding-top: 15px;
   padding-bottom: 15px;
 }
@@ -52,7 +52,7 @@ code {
   max-width: fit-content;
 }
 
-#git-topic{
+.git-topic{
   padding-bottom: 15px;
 }
 
