@@ -1,88 +1,90 @@
 div.main-body {
-  display: grid;
-  grid-template-columns: minmax(300px, auto) 1fr;
-  grid-gap: 20px;
-  grid-template-areas: "navbar mainContent";
+    display: grid;
+    grid-template-columns: minmax(300px, auto) 1fr;
+    grid-gap: 20px;
+    grid-template-areas: "navbar mainContent";
 }
 
 nav#navbar {
-  grid-area: navbar;
-  position: fixed;
+    grid-area: navbar;
+    position: fixed;
 }
 
 nav#navbar a {
-  display: block;
-  border: 1px solid black;
-  padding: 5px;
-  margin: 10px 0;
-  text-decoration: none;
-  color: black;
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 10px 0;
+    text-decoration: none;
+    color: black;
 }
 
 #navbar a:hover {
-  background-color: #ccc;
+    background-color: #ccc;
 }
 
 #navbar a.active {
-  background-color: #4CAF50;
-  color: white;
+    background-color: #4CAF50;
+    color: white;
 }
 
 main#main-doc {
-  grid-area: mainContent;
+    grid-area: mainContent;
 }
 
 header {
-  font-size: 1.7em;
-  font-weight: bold;
+    font-size: 1.7em;
+    font-weight: bold;
 }
 
-.sec-header{
-  padding-top: 15px;
-  padding-bottom: 15px;
+.sec-header {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 code {
-  overflow: hidden;
-  border-radius: 3px;
-  background-color: #ccc;
-  padding: 10px 3px;
-  display: block;
-  color: #037367;
-  max-width: fit-content;
+    overflow: hidden;
+    border-radius: 3px;
+    background-color: #ccc;
+    padding: 10px 3px;
+    display: block;
+    color: #037367;
+    max-width: fit-content;
 }
 
-.git-topic{
-  padding-bottom: 15px;
+.git-topic {
+    padding-bottom: 15px;
 }
 
 @media screen and (max-width: 750px) {
-  div.main-body {
-    grid-template-columns: 1fr;
-    grid-template-areas: "navbar" "mainContent";
-  }
+    div.main-body {
+        grid-template-columns: 1fr;
+        grid-template-areas: "navbar""mainContent";
+    }
+
     nav#navbar {
-    position: inherit;
-  }
+        position: inherit;
+    }
 }
 
 footer span {
-  margin-top: 5px;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 0.9em;
-  color: #444;
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.9em;
+    color: #444;
 }
 
-.footerLink{
-  color: #037367;
+.footerLink {
+    color: #037367;
 }
-.footerLink:hover{
+
+.footerLink:hover {
     text-decoration: none;
     color: #da9284;
 }
 
-.footerLink:visited{
+.footerLink:visited {
     color: #551A8B;
     text-decoration: none;
 }
