@@ -12,7 +12,7 @@
 <body>
     <div class="main-body">
         <nav id="navbar">
-            <header id="header">GIT Cheatsheet</header>
+            <header id="header">Git Cheat Sheet</header>
             <a href="#INTRODUCTION" class="nav-link">Introduction</a>
             <a href="#GIT" class="nav-link">Git</a>
             <a href="#CREATE" class="nav-link">Create</a>
@@ -22,22 +22,18 @@
             <a href="#BRANCHES_AND_TAGS" class="nav-link">Branches and Tags</a>
             <a href="#COMMIT_HISTORY" class="nav-link">Commit History</a>
             <a href="#UNDO" class="nav-link">Undo</a>
-            <a href="#BEST_PRATICES" class="nav-link">Best Pratices</a>
+            <a href="#BEST_PRACTICES" class="nav-link">Best Practices</a>
         </nav>
         <main id="main-doc">
             <section class="main-section" id="INTRODUCTION">
                 <header class="sec-header">Introduction</header>
                 <p>Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>
-                <p>This is an open source cheat sheet for GIT and the most common and used (personal opinion) GIT features. My references are from experiences or from the <a href="https://www.git-tower.com/blog/git-cheat-sheet">Tower Git Cheat Sheet</a>. If you
-                    feel something should be added, feel free to make a <a href="https://github.com/mevorahde/Git_Cheat_Sheet">pull request</a> or <a href="mailto:mevorahde@hotmail.com?Subject=Git%20Cheet%20Sheet" target="_top">e-mail me</a>.
-                </p>
+                <p>This practical Git reference collects frequently used commands for personal and team workflows. It began as a web-development exercise and is now used as a quick reference by me and several coworkers. Corrections and useful additions are welcome through <a href="https://github.com/mevorahde/Git_Cheat_Sheet/issues">issues</a> or <a href="https://github.com/mevorahde/Git_Cheat_Sheet/pulls">pull requests</a>.</p>
             </section>
             <section class="main-section" id="GIT">
                 <header class="sec-header">Git</header>
-                <p>I use GIT as a version control and as a 'Flash drive' so to speak. I like to 'pull' my code from GitHub, the cloud on to my laptop when I'm traveling. Once I'm doing with some edits, I 'push' my code back to the GitHub and 'pull' my edited code
-                    to my desktop when I get back home.
-                </p>
-                <p>GIT/GitHub is also popular to share projects with others, people can 'fork' a copy of your code. They can make their own version of your code or can make edits and make a 'pull request' to your master version of your code.</p>
+                <p>Git is a distributed version control system that records project history locally and supports collaboration through shared remotes such as GitHub. Pulling incorporates remote changes into a local branch, while pushing publishes local commits to a remote repository.</p>
+                <p>GitHub adds hosting and collaboration features around Git. Contributors can fork a repository, work on their own branch, and propose changes through a pull request.</p>
                 <h3>Core Topics Covered</h3>
                 <ul>
                     <li>Create</li>
@@ -47,22 +43,22 @@
                     <li>Branches and Tags</li>
                     <li>Commit History</li>
                     <li>Undo</li>
-                    <li>Best Pratices</li>
+                    <li>Best Practices</li>
                 </ul>
             </section>
             <section class="main-section" id="CREATE">
                 <header class="sec-header">Create</header>
                 <div class="git-topic">
                     <h6>Clone an existing repository</h6>
-                    <p>By getting the url from a created repository in GitHub, Enter in the following:</p>
+                    <p>Copy the repository URL from GitHub, then run:</p>
                     <code>git clone &lt;repository_url&gt;</code>
                 </div>
                 <div>
                     <h6>Create a new local repository</h6>
-                    <p>To create source control for a local copy and a GitHub repository, you need to initalize the Git settings for the directory. </p>
+                    <p>To create source control for a local copy and a GitHub repository, you need to initialize the Git settings for the directory. </p>
                     <p>Change directories to the folder you want source control for. Enter in the following:</p>
                     <code>git init</code>
-                    <div>
+                </div>
             </section>
             <section class="main-section" id="LOCAL_CHANGES">
                 <header class="sec-header">Local Changes</header>
@@ -95,19 +91,19 @@
                     <code>git commit -a</code>
                 </div>
                 <div class="git-topic">
-                    <h6>Commit perviously staged changes</h6>
+                    <h6>Commit previously staged changes</h6>
                     <code>git commit</code>
                 </div>
                 <div class="git-topic">
-                    <h6>Combines the add and commit commands into one.</h6>
-                    <code>git commit --am</code>
+                    <h6>Stage modified tracked files and commit them with a message.</h6>
+                    <code>git commit -am "&lt;message&gt;"</code>
                 </div>
                 <div class="git-topic">
                     <h6>Delete untracked files in the local working directory</h6>
                     <code>git clean -n</code>
                 </div>
                 <div class="git-topic">
-                    <h6>A force deletion of untracked files in the local working directory.</h6>
+                    <h6>Permanently remove untracked files, directories, and ignored files. Preview carefully first; this cannot be undone by Git.</h6>
                     <h6>-x: This option tells Git to remove all files ignored by .gitignore as well.</h6>
                     <h6>-d: This option allows Git to remove untracked directories in addition to untracked files.</h6>
                     <h6>-f: This option is required to force the removal of files or directories.</h6>
@@ -149,11 +145,11 @@
                     <code>git push &lt;remote_name&gt; &lt;branch_name&gt;</code>
                 </div>
                 <div class="git-topic">
-                    <h6>Delete a branch on the remote</h6>
-                    <code>git branch -dr &lt;remote_name&gt;/&lt;branch_name&gt;</code>
+                    <h6>Delete a branch from the remote</h6>
+                    <code>git push &lt;remote_name&gt; --delete &lt;branch_name&gt;</code>
                 </div>
                 <div class="git-topic">
-                    <h6>Publish your tages</h6>
+                    <h6>Publish your tags</h6>
                     <code>git push --tags</code>
                 </div>
             </section>
@@ -215,6 +211,7 @@
                 <div class="git-topic">
                     <h6>Mark the current commit with a tag</h6>
                     <code>git tag &lt;tag_name&gt;</code>
+                </div>
             </section>
             <section class="main-section" id="COMMIT_HISTORY">
                 <header class="sec-header">Commit History</header>
@@ -242,7 +239,7 @@
                     <code>git checkout HEAD &lt;file&gt;</code>
                 </div>
                 <div class="git-topic">
-                    <h6>Reverta commit (by producing a new commit with contrary changes)</h6>
+                    <h6>Revert a commit (by producing a new commit with contrary changes)</h6>
                     <code>git revert &lt;commit&gt;</code>
                 </div>
                 <div class="git-topic">
@@ -258,8 +255,8 @@
                     <code>git reset --keep &lt;commit&gt;</code>
                 </div>
             </section>
-            <section class="main-section" id="BEST_PRATICES">
-                <header class="sec-header">Best Pratices</header>
+            <section class="main-section" id="BEST_PRACTICES">
+                <header class="sec-header">Best Practices</header>
                 <h6>Commit Related Changes</h6>
                 <p>A commit should be a wrapper for related changes. For example, fixing two different bugs should produce two separate commits. Small commits make it easier for other developers to understand the changes and roll them back if something went wrong.</p>
                 <p>With tools like the staging area and the ability to stage only parts of a file, Git makes it easy to create very granular commits.</p>
@@ -279,7 +276,7 @@
                 <p>Git lets you pick from a lot of different flows: long-running branches, topic branches, merge or rebase, git flow… Which one you choose depends on a couple of factors: your project, your overall development and deployment workflow and (maybe most
                     importantly) on your and your teammates’ personal preferences. However you choose to work, just make sure to agree on a common workflow that everyone follows.</p>
                 <h6>Do not commit half-done work</h6>
-                <p>You should only commit code when it’s completed. This doesn’t mean you have to complete a while large feature before committing. Quite the contrary: split the feature’s implementation into logical chunks and remember to commit early and often.
+                <p>You should only commit code when it’s completed. This doesn’t mean you have to complete a whole large feature before committing. Quite the contrary: split the feature’s implementation into logical chunks and remember to commit early and often.
                     But don’t commit just to have something in the repository before leaving the office at the end of the day. If you’re tempted to commit just because you need a clean working copy (to check out a branch, pull changes, etc.) consider using Git’s
                     &lt;Stash&gt; feature instead.</p>
                 <h6>Write good commit messages</h6>
@@ -288,7 +285,7 @@
                     <li>What was the motivation for the change? </li>
                     <li>How does it differ from the previous implementation? </li>
                 </ul>
-                <p>Use the imperative, present tense (<i>change</i> not <i>changed</i> or <i>changes</i>) to be considered with generated messages from commands like git merge.</p>
+                <p>Use the imperative, present tense (<i>change</i> not <i>changed</i> or <i>changes</i>) to be consistent with generated messages from commands like git merge.</p>
                 <div class="git-topic">
                     <h6>Help Documentation</h6>
                     <p>Get help on the command line</p>
@@ -300,8 +297,8 @@
             <footer class="text-center">
                 <hr>
                 <p>
-                    Written and Coded by <a class="footerLink" href="https://github.com/mevorahde" target="blank">David Mevorah</a>
-                    <span>Copyright 2019</span>
+                    Written and Coded by <a class="footerLink" href="https://github.com/mevorahde" target="_blank" rel="noopener noreferrer">David Mevorah</a>
+                    <span>Copyright 2019–2026</span>
                 </p>
             </footer>
         </main>
