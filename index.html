@@ -99,11 +99,12 @@
                     <code>git commit -am "&lt;message&gt;"</code>
                 </div>
                 <div class="git-topic">
-                    <h6>Delete untracked files in the local working directory</h6>
+                    <h6>Preview untracked files that would be removed; this command deletes nothing</h6>
                     <code>git clean -n</code>
                 </div>
                 <div class="git-topic">
                     <h6>Permanently remove untracked files, directories, and ignored files. Preview carefully first; this cannot be undone by Git.</h6>
+                    <p>First run <code>git clean -ndx</code> to preview the same scope, including ignored files and directories. Back up anything needed: ignored credentials, virtual environments, and local data may be included. Only run the deletion command below after reviewing every listed path.</p>
                     <h6>-x: This option tells Git to remove all files ignored by .gitignore as well.</h6>
                     <h6>-d: This option allows Git to remove untracked directories in addition to untracked files.</h6>
                     <h6>-f: This option is required to force the removal of files or directories.</h6>
@@ -230,13 +231,14 @@
             </section>
             <section class="main-section" id="UNDO">
                 <header class="sec-header">Undo</header>
+                <p><strong>Warning:</strong> Hard resets and file checkout below can discard staged or uncommitted work. Review <code>git status</code> and both staged and unstaged diffs, and keep a backup before proceeding. Use <code>git revert</code> to undo a published commit without rewriting shared history.</p>
                 <div class="git-topic">
                     <h6>Discard all local changes in your working directory</h6>
                     <code>git reset --hard HEAD</code>
                 </div>
                 <div class="git-topic">
                     <h6>Discard local changes in a specific file</h6>
-                    <code>git checkout HEAD &lt;file&gt;</code>
+                    <code>git checkout HEAD -- &lt;file&gt;</code>
                 </div>
                 <div class="git-topic">
                     <h6>Revert a commit (by producing a new commit with contrary changes)</h6>
